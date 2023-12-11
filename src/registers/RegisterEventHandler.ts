@@ -1,5 +1,5 @@
 import { Client, Events } from "discord.js";
-import { InteractionCreateHandler } from "../events/InteractionCreate";
+import { InteractionCreateHandler } from "../events/InteractionCreation";
 import { ReadyHandler } from "../events/ReadyHandler";
 
 export const RegisterEventHandler = (client: Client) => {
