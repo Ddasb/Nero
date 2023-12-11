@@ -1,0 +1,29 @@
+{
+  "name": "nero",
+  "version": "1.0.0",
+  "description": "A Black clover mobile Bot",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Ddasb/Nero.git"
+  },
+  "keywords": [
+    "Black",
+    "Clover",
+    "Mobile",
+    "Gacha",
+    "Bot",
+    "Discord",
+    "Bot",
+    "DiscordJs"
+  ],
+  "author": "Ddasb",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Ddasb/Nero/issues"
+  },
+  "homepage": "https://github.com/Ddasb/Nero#readme"
+}
