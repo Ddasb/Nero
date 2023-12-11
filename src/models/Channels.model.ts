@@ -6,7 +6,10 @@ export const Channels = Database.define("channels", {
     type: DataTypes.STRING,
     unique: true
   },
-  alert: {
+  alerts: {
+    type: DataTypes.STRING
+  },
+  news: {
     type: DataTypes.STRING
   }
 });
