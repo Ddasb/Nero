@@ -10,4 +10,8 @@ const execute = async (interaction: Interaction) => {
   await interaction.reply("Pong!");
 };
 
-module.exports = { cooldown, data, execute };
+export const PingCommand = {
+  data,
+  cooldown,
+  execute
+};

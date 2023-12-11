@@ -1,8 +1,6 @@
-import { Collection, Events, Interaction } from "discord.js";
+import { Collection, Interaction } from "discord.js";
 
-const name = Events.InteractionCreate;
-
-const execute = async (interaction: Interaction) => {
+export const InteractionCreateHandler = async (interaction: Interaction) => {
   if (!interaction.isChatInputCommand()) return;
 
   const command = interaction.client.commands.get(interaction.commandName);
@@ -29,10 +27,11 @@ const execute = async (interaction: Interaction) => {
     if (now < expirationTime) {
       const expiredTimestamp = Math.round(expirationTime / 1000);
 
-      return interaction.reply({
+      interaction.reply({
         content: `Please wait, you are on a cooldown for \`${command.data.name}\`. You can use it again <t:${expiredTimestamp}:R>.`,
         ephemeral: true
       });
+      return;
     }
   }
 
@@ -55,9 +54,4 @@ const execute = async (interaction: Interaction) => {
       });
     }
   }
-};
-
-module.exports = {
-  name,
-  execute
 };
