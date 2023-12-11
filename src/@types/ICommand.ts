@@ -1,7 +1,5 @@
-import { SlashCommandBuilder } from "discord.js";
-
 export interface ICommand {
-  data: SlashCommandBuilder;
+  data: any;
   cooldown: number;
   execute: Function;
 }

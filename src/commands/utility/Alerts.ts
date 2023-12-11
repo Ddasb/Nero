@@ -37,7 +37,7 @@ const execute = async (interaction: Interaction) => {
     await channel.update({ [option]: interaction.channelId });
   }
 
-  await interaction.editReply({ content: "This channel is now used for alerts." });
+  await interaction.editReply({ content: `This channel is now used for ${option}.` });
 };
 
 export const AlertsCommand = {
