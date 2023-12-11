@@ -1,9 +1,10 @@
 import { Client, Collection, GatewayIntentBits } from "discord.js";
 import fs from "fs";
 import path from "path";
+import { IClient } from "./@types/IClient";
 import { token } from "./config.json";
 
-const client = new Client({ intents: [GatewayIntentBits.Guilds] });
+const client = new Client({ intents: [GatewayIntentBits.Guilds] }) as IClient;
 client.commands = new Collection();
 client.cooldowns = new Collection();
 
