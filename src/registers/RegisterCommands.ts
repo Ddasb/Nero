@@ -1,21 +1,23 @@
 import { RESTPostAPIChatInputApplicationCommandsJSONBody } from "discord.js";
 import { IClient } from "../@types/IClient";
 import { ICommand } from "../@types/ICommand";
+import { AlertCommand } from "../commands/utility/Alert";
 import { ChannelsCommande } from "../commands/utility/Channels";
 import { RegisterRest } from "./RegisterRest";
 
 const commands: RESTPostAPIChatInputApplicationCommandsJSONBody[] = [];
 
-export const SetCommande = (client: IClient, command: ICommand) => {
+const setCommande = (client: IClient, command: ICommand) => {
   client.commands.set(command.data.name, command);
   commands.push(command.data.toJSON());
 };
 
-export const RegisterCommands = (client: IClient) => {
+export const RegisterCommands = async (client: IClient) => {
   try {
-    SetCommande(client, ChannelsCommande);
+    setCommande(client, ChannelsCommande);
+    setCommande(client, AlertCommand);
 
-    RegisterRest(commands);
+    await RegisterRest(commands);
   } catch (error) {
     console.error(error);
   }
