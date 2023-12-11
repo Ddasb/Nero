@@ -26,8 +26,6 @@ const execute = async (interaction: Interaction) => {
     return;
   }
 
-  await interaction.deferReply({ ephemeral: true });
-
   const channel = await Channels.findOne({ where: { guild: interaction.guildId } });
 
   if (!channel?.alerts) {
