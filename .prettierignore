@@ -1,4 +1,0 @@
-build/*
-coverage
-.vscode
-pnpm-lock.yaml
