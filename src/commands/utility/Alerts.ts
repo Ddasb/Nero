@@ -17,7 +17,7 @@ const execute = async (interaction: Interaction) => {
   if (!channel) {
     await Channels.create({ guild: interaction.guildId, alert: interaction.channelId });
   } else {
-    await Channels.create({ ...channel.toJSON(), alert: interaction.channelId });
+    await channel.update({ alert: interaction.channelId });
   }
 
   await interaction.reply({ content: "This channel is now used for alerts.", ephemeral: true });
