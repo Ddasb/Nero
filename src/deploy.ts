@@ -1,7 +1,7 @@
-const { REST, Routes } = require("discord.js");
-const { clientId, guildId, token } = require("./config.json");
-const fs = require("node:fs");
-const path = require("node:path");
+import { REST, Routes } from "discord.js";
+import fs from "fs";
+import path from "path";
+import { clientId, token } from "./config.json";
 
 const commands = [];
 
@@ -34,7 +34,7 @@ const rest = new REST().setToken(token);
 
     const data = await rest.put(Routes.applicationCommands(clientId), { body: commands });
 
-    console.log(`Successfully reloaded ${data.length} application (/) commands.`);
+    console.log(`Successfully reloaded ${(data as unknown[]).length} application (/) commands.`);
   } catch (error) {
     console.error(error);
   }

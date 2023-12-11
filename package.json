@@ -4,9 +4,9 @@
   "description": "A Black clover mobile Bot",
   "main": "src/index.js",
   "scripts": {
-    "start": "node src/index.js",
-    "deploy": "node src/deploy.js",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start": "ts-node-dev src/index.ts",
+    "deploy": "ts-node-dev src/deploy.ts",
+    "build": "tsc"
   },
   "repository": {
     "type": "git",
@@ -30,5 +30,12 @@
   "homepage": "https://github.com/Ddasb/Nero#readme",
   "dependencies": {
     "discord.js": "^14.14.1"
+  },
+  "devDependencies": {
+    "@types/node": "^20.10.4",
+    "eslint": "^8.55.0",
+    "ts-node": "^10.9.2",
+    "ts-node-dev": "^2.0.0",
+    "typescript": "^5.3.3"
   }
 }
