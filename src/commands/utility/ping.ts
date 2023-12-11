@@ -7,7 +7,7 @@ const data = new SlashCommandBuilder().setName("ping").setDescription("Replies w
 const execute = async (interaction: Interaction) => {
   if (!interaction.isChatInputCommand()) return;
 
-  await interaction.reply("Pong!");
+  await interaction.reply("Croa !");
 };
 
 export const PingCommand = {
