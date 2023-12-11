@@ -1,15 +1,7 @@
-import { DataTypes } from "sequelize";
-import { Database } from "../Database";
+import { InferAttributes, InferCreationAttributes, Model } from "sequelize";
 
-export const Channels = Database.define("channels", {
-  guild: {
-    type: DataTypes.STRING,
-    unique: true
-  },
-  alerts: {
-    type: DataTypes.STRING
-  },
-  news: {
-    type: DataTypes.STRING
-  }
-});
+export class Channels extends Model<InferAttributes<Channels>, InferCreationAttributes<Channels>> {
+  declare guild: string;
+  declare alerts?: string;
+  declare news?: string;
+}

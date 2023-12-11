@@ -1,7 +1,7 @@
 import { RESTPostAPIChatInputApplicationCommandsJSONBody } from "discord.js";
 import { IClient } from "../@types/IClient";
 import { ICommand } from "../@types/ICommand";
-import { AlertsCommand } from "../commands/utility/Alerts";
+import { ChannelsCommande } from "../commands/utility/Channels";
 import { RegisterRest } from "./RegisterRest";
 
 const commands: RESTPostAPIChatInputApplicationCommandsJSONBody[] = [];
@@ -13,7 +13,7 @@ export const SetCommande = (client: IClient, command: ICommand) => {
 
 export const RegisterCommands = (client: IClient) => {
   try {
-    SetCommande(client, AlertsCommand);
+    SetCommande(client, ChannelsCommande);
 
     RegisterRest(commands);
   } catch (error) {

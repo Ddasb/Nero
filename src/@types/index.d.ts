@@ -5,6 +5,7 @@ declare global {
     interface ProcessEnv {
       TOKEN: string;
       CLIENT_ID: string;
+      INVITATION_URL: string;
     }
   }
 }

@@ -5,7 +5,7 @@ const cooldown = 5;
 
 const data = new SlashCommandBuilder()
   .setName("channel")
-  .setDescription("Setups channel for alerts!")
+  .setDescription("Setups channels !")
   .addStringOption((option) =>
     option
       .setName("type")
@@ -19,7 +19,7 @@ const execute = async (interaction: Interaction) => {
 
   const option = interaction.options.getString("type");
 
-  if (!option) {
+  if (!option || !interaction.guildId) {
     await interaction.reply({
       content: "Wrong type. Please, select a correct type.",
       ephemeral: true
@@ -40,7 +40,7 @@ const execute = async (interaction: Interaction) => {
   await interaction.editReply({ content: `This channel is now used for ${option}.` });
 };
 
-export const AlertsCommand = {
+export const ChannelsCommande = {
   data,
   cooldown,
   execute
