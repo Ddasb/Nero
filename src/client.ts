@@ -9,7 +9,11 @@ const client = new Client({ intents: [GatewayIntentBits.Guilds] });
 client.commands = new Collection();
 client.cooldowns = new Collection();
 
-RegisterCommands(client);
-RegisterEventHandler(client);
+const initClient = async () => {
+  await RegisterCommands(client);
 
-client.login(process.env.TOKEN);
+  RegisterEventHandler(client);
+  await client.login(process.env.TOKEN);
+};
+
+initClient();
