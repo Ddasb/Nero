@@ -45,7 +45,6 @@ const execute = async (interaction: Interaction) => {
     .setTitle(title)
     .setDescription(description)
     .setImage(image)
-    .setURL(process.env.INVITATION_URL)
     .setTimestamp();
 
   alertsChannel.send({ embeds: [embedAlert] });
