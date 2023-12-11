@@ -13,6 +13,7 @@ const initClient = async () => {
   await RegisterCommands(client);
 
   RegisterEventHandler(client);
+
   await client.login(process.env.TOKEN);
 };
 
