@@ -1,7 +1,13 @@
-import { InferAttributes, InferCreationAttributes, Model } from "sequelize";
+import { Column, Model, Table } from "sequelize-typescript";
 
-export class Channels extends Model<InferAttributes<Channels>, InferCreationAttributes<Channels>> {
+@Table
+export class Channels extends Model {
+  @Column
   declare guild: string;
-  declare alerts?: string;
-  declare news?: string;
+
+  @Column
+  declare alerts: string;
+
+  @Column
+  declare news: string;
 }
