@@ -1,2 +1,6 @@
-config.json
+# Auto-generated
 node_modules
+build
+
+# Config
+.env
